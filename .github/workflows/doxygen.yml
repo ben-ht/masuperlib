@@ -14,17 +14,17 @@ jobs:
     # Build Doxygen documentation
     # mattnotmitt/doxygen-action
     # https://github.com/marketplace/actions/doxygen-action
-  - name: Build Doc
+    - name: Build Doc
     uses: mattnotmitt/doxygen-action@v1.9.5
     with:
-      working-directory: './'
-      doxyfile-path: './'
+      working-directory: '.'
+      doxyfile-path: './Doxyfile'
 
     # Deploy Doxygen documentation
     # peaceiris/actions-gh-pages
     # https://github.com/peaceiris/actions-gh-pages
-  - name: Deploy
+    - name: Deploy
     uses: peaceiris/actions-gh-pages@v3
     with:
-      github_token: ${{ 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 }}
-      publish_dir: ./public
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: ./docs
